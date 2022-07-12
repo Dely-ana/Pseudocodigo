@@ -1,0 +1,115 @@
+Algoritmo "Agencia de viagem"
+// 
+//  
+// Descrição   :  Descrição   :Usando conceitos de programação estruturada (Vetor), criar em pseudocódigo
+//um menu para simular um cadastro para uma agência de viagens com as seguintes funções:
+//cadastro de cliente e cadastro de destino, criar também uma consulta para cada estrutura de dados.
+// Autor(a)    : Deliana de Jesus Pestana Souza
+// Data atual  : 11/07/2022
+
+tipo
+
+viagem = registro
+nome :caractere
+codigo: inteiro
+status:logico
+Fimregistro
+
+Var
+
+  loja: vetor[1..2]de viagem
+  sair: logico
+  opcao: inteiro
+
+  procedimento cadastro
+var
+i: inteiro
+d: caractere
+
+inicio
+
+   para i de 1 ate 2 faca
+      escreval("=============================================")
+      escreval("        VUMBORA, Agência de Viagem           ")
+      escreval("=============================================")
+      escreval()
+      escreval("=============================================")
+      escreval("     C A D A S T R O  D E  C L I E N T E S   ")
+      escreval("=============================================")
+      escreval ("Entre com ocadastro do Cliente")
+      escreva("NOME:")
+      leia(d)
+      escreva("SOBRENOME:")
+      leia(d)
+      escreva("CPF:")
+      leia(d)
+      escreva ("ENDEREÇO:")
+      leia(d)
+      escreva("TELEFONE:")
+      leia(d)
+      escreva ("E-MAIL:")
+      leia(d)
+      escreval("CLIENTE CADASTRADO COM SUCESSO")
+      escreval("Desejamos a você uma boa Viagem!!")
+   fimpara
+
+       para i de 0 ate 1 faca
+            escreval("--------------------------------------")
+            escreval("            CADASTRO DESTINO          ")
+            escreval("--------------------------------------")
+            escreval("DIGITE AQUI O LOCAL DE SAÍDA:")
+            leia(d)
+            escreval("DIGITE AQUI O LOCAL DE CHEGADA:")
+            leia(d)
+            escreval("Destino Cadastrado com Sucesso")
+            escreval("Boa Viagem!!")
+
+        fimpara
+fimprocedimento
+
+procedimento excluir
+var
+li: caractere
+i:inteiro
+inicio
+      escreval("Entre com o nome do Cadastro para excluir")
+      leia(li)
+  para i de 1 ate 2 faca
+      se(li = loja[i].nome)entao
+            loja[i].nome <- ""
+            loja[i].codigo <- 0
+            escreval("Cadastro excluido")
+      fimse
+  fimpara
+fimprocedimento
+inicio
+
+
+    sair <- falso
+     repita
+        escreval("|---------------------------|")
+        escreval("|   Digite 1 para Cadastro  |")
+        escreval("|   Digite 2 para Excluir   |")
+        escreval("|   Digite 0 para Sair      |")
+        escreval("|---------------------------|")
+        leia(opcao)
+
+      escolha(opcao)
+        caso = 1
+        cadastro
+
+        caso = 2
+        Excluir
+
+        caso = 0
+        Sair <- verdadeiro
+
+         outrocaso
+         escreval(" Opção Invalida ")
+      fimescolha
+   ate(sair = verdadeiro)
+   limpatela
+
+
+
+Fimalgoritmo
